@@ -82,6 +82,12 @@ function openPopup(link) {
 
 function closePopup() {
     const popup = document.getElementById('popup');
+    const popupText = document.getElementById('popupText');
+    
+    // إزالة عنصر iframe من النافذة المنبثقة
+    popupText.innerHTML = '';
+    
+    // إخفاء النافذة المنبثقة
     popup.style.display = 'none';
 }
 
