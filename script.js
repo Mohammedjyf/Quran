@@ -30,6 +30,7 @@ const parts = [
     { name: "الجزء 29", link: "https://www.youtube.com/embed/OLg28wvqPC0?si=hkbdVSo_VVxzblcX" },
     { name: "الجزء 30", link: "https://www.youtube.com/embed/eY78slfWvVY?si=SUr2vsJ9ypUpvZdB" } // لا فارزة هنا
 ];
+
 let startDate = localStorage.getItem('startDate') ? new Date(localStorage.getItem('startDate')) : null;
 
 function generateCalendar() {
@@ -47,18 +48,18 @@ function generateCalendar() {
         return;
     }
 
-      document.getElementById('remainingDays').textContent = ` (${remainingDays}) يوم هي الأيام المتبقية لنهاية شهر الخير والبركة فاستثمرها`;
-
+ document.getElementById('remainingDays').textContent = `(${remainingDays}) يوم هي الأيام المتبقية لنهاية شهر الخير والبركة فاستثمرها `;
     for (let i = 1; i <= 30; i++) {
         const day = document.createElement('div');
         day.classList.add('day');
         day.textContent = parts[i - 1].name; // اسم الجزء
         day.addEventListener('click', () => openPopup(parts[i - 1].link)); // رابط الجزء
 
-        if (i < daysPassed) {
+        if (i <= daysPassed) {
             day.classList.add('past');
-        } else if (i === daysPassed) {
-            day.classList.add('current');
+        }
+        if (i === daysPassed + 1) {
+            day.classList.add('current'); // تلوين اليوم الحالي باللون الأخضر
         }
 
         honeycomb.appendChild(day);
@@ -67,9 +68,26 @@ function generateCalendar() {
 
 function setStartDate() {
     const dateInput = document.getElementById('startDate');
-    startDate = new Date(dateInput.value);
+    const selectedDate = new Date(dateInput.value);
+    const today = new Date();
+
+    // التحقق من أن التاريخ المحدد ليس في المستقبل
+    if (selectedDate > today) {
+        alert("لا يمكن تحديد تاريخ في المستقبل. الرجاء اختيار تاريخ صحيح.");
+        return;
+    }
+
+    startDate = selectedDate;
+        // عرض رسالة تأكيد
+    alert("تم تحديد تاريخ البداية بنجاح. قم بالحفظ لتطبيق النتائج.");
     localStorage.setItem('startDate', startDate);
+
+
+
+    // تحديث التقويم
     generateCalendar();
+        alert("تم حفظ التاريخ والتطبيق بنجاح .");
+
 }
 
 function openPopup(link) {
@@ -77,7 +95,6 @@ function openPopup(link) {
     const popupText = document.getElementById('popupText');
     popupText.innerHTML = `<iframe width="100%" height="300" src="${link}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
     popup.style.display = 'block';
-    
 }
 
 function closePopup() {
