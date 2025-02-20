@@ -63,7 +63,7 @@ body {
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     cursor: pointer;
     transition: background-color 0.3s;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold; /* جعل الخط غامقًا */
     text-align: center;
     padding: 25px;
