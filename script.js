@@ -1,7 +1,7 @@
 const parts = [
-    { name: "الجزء الأول", link: "https://www.youtube.com/embed/رابط_اليوتيوب_للجزء_الأول" },
-    { name: "الجزء الثاني", link: "https://www.youtube.com/embed/رابط_اليوتيوب_للجزء_الثاني" },
-    { name: "الجزء الثالث", link: "https://www.youtube.com/embed/رابط_اليوتيوب_للجزء_الثالث" },
+    { name: "الجزء الأول", link: "https://youtu.be/CFi6LLvN79Y?si=s_QI9IK2iIMI9OWT" },
+    { name: "الجزء الثاني", link: "https://youtu.be/TlVjfJe6I-8?si=MzU3QioKYTYidKeF" },
+    { name: "الجزء الثالث", link: "https://youtu.be/Ne1-zYYNkns?si=HGsfZUADY3j5coQr" },
     { name: "الجزء الرابع", link: "https://www.youtube.com/embed/رابط_اليوتيوب_للجزء_الرابع" },
     { name: "الجزء الخامس", link: "https://www.youtube.com/embed/رابط_اليوتيوب_للجزء_الخامس" },
     { name: "الجزء السادس", link: "https://www.youtube.com/embed/رابط_اليوتيوب_للجزء_السادس" },
