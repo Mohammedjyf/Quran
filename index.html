@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أجزاء القرآن الكريم</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- عبارة فوق مزار كميل بن زياد -->
+        <div class="header">
+            <h1>مزار كميل بن زياد <span class="blessing">رضي الله عنه</span></h1>
+            <h2>أجزاء القرآن الكريم</h2>
+        </div>
+
+        <!-- التحكم في التاريخ -->
+        <div class="controls">
+            <p>قم بتحديد بداية شهر رمضان</p>
+            <input type="date" id="startDate" />
+            <button onclick="setStartDate()">حفظ تاريخ البداية</button>
+            <p id="remainingDays"></p>
+        </div>
+
+        <!-- الأيقونات -->
+        <div class="honeycomb">
+            <!-- سيتم إضافة الأيام هنا عبر JavaScript -->
+        </div>
+    </div>
+
+    <!-- النافذة المنبثقة -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <div id="popupText"></div> <!-- سيتم إضافة iframe هنا -->
+            <button class="confirm-button" onclick="closePopup()">✓</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
