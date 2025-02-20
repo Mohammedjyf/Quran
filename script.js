@@ -1,10 +1,10 @@
 const parts = [
-    { name: "الجزء الأول", link: "https://youtu.be/CFi6LLvN79Y?si=s_QI9IK2iIMI9OWT" },
-    { name: "الجزء الثاني", link: "https://youtu.be/TlVjfJe6I-8?si=MzU3QioKYTYidKeF" },
-    { name: "الجزء الثالث", link: "https://youtu.be/Ne1-zYYNkns?si=HGsfZUADY3j5coQr" },
-    { name: "الجزء الرابع", link: "https://www.youtube.com/embed/رابط_اليوتيوب_للجزء_الرابع" },
-    { name: "الجزء الخامس", link: "https://www.youtube.com/embed/رابط_اليوتيوب_للجزء_الخامس" },
-    { name: "الجزء السادس", link: "https://www.youtube.com/embed/رابط_اليوتيوب_للجزء_السادس" },
+    { name: "الجزء الأول", link: "https://www.youtube.com/embed/ZE_-O9mrtaE?si=JuF82AZGKEAjDTzz" },
+    { name: "الجزء الثاني", link: "https://www.youtube.com/embed/vABx93OWNOY?si=DkokJ0VXS_4-6Qwk" },
+    { name: "الجزء الثالث", link: "https://www.youtube.com/embed/8CZgAynTKiY?si=vnlsuwzLb20p605D" },
+    { name: "الجزء الرابع", link: "https://www.youtube.com/embed/8CZgAynTKiY?si=s8Hh2FOEiAFtentC" },
+    { name: "الجزء الخامس", link: "https://www.youtube.com/embed/28mImpnlgP4?si=wPQSjmuwltYQHRDF" },
+    { name: "الجزء السادس", link: "https://www.youtube.com/embed/3gEU1eb_3A4?si=EbhC9-zpYKDUrGZc" },
     { name: "الجزء السابع", link: "https://www.youtube.com/embed/رابط_اليوتيوب_للجزء_السابع" },
     { name: "الجزء الثامن", link: "https://www.youtube.com/embed/رابط_اليوتيوب_للجزء_الثامن" },
     { name: "الجزء التاسع", link: "https://www.youtube.com/embed/رابط_اليوتيوب_للجزء_التاسع" },
@@ -28,7 +28,7 @@ const parts = [
     { name: "الجزء السابع والعشرون", link: "https://www.youtube.com/embed/رابط_اليوتيوب_للجزء_السابع_والعشرون" },
     { name: "الجزء الثامن والعشرون", link: "https://www.youtube.com/embed/رابط_اليوتيوب_للجزء_الثامن_والعشرون" },
     { name: "الجزء التاسع والعشرون", link: "https://www.youtube.com/embed/رابط_اليوتيوب_للجزء_التاسع_والعشرون" },
-    { name: "الجزء الثلاثون", link: "https://www.youtube.com/embed/رابط_اليوتيوب_للجزء_الثلاثون" },
+    { name: "الجزء الثلاثون", link: "https://www.youtube.com/embed/رابط_اليوتيوب_للجزء_الثلاثون" } // لا فارزة هنا
 ];
 
 let startDate = localStorage.getItem('startDate') ? new Date(localStorage.getItem('startDate')) : null;
@@ -48,7 +48,7 @@ function generateCalendar() {
         return;
     }
 
-    document.getElementById('remainingDays').textContent = `الأيام المتبقية لنهاية شهر الخير والبركة فاستثمرها: ${remainingDays} أيام`;
+      document.getElementById('remainingDays').textContent = ` (${remainingDays}) يوم هي الأيام المتبقية لنهاية شهر الخير والبركة فاستثمرها`;
 
     for (let i = 1; i <= 30; i++) {
         const day = document.createElement('div');
@@ -78,6 +78,7 @@ function openPopup(link) {
     const popupText = document.getElementById('popupText');
     popupText.innerHTML = `<iframe width="100%" height="300" src="${link}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
     popup.style.display = 'block';
+    
 }
 
 function closePopup() {
